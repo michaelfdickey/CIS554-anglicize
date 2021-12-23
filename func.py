@@ -124,8 +124,26 @@ def anglicize(n):
             else:
                 return 'ninety'
 
+    def anglicize0to99(n):
+        if n < 20:
+            return anglicize10to19(n)
+        else:
+            return anglicize20to99(n)
 
-        
+            
+
+
+
+
+
+
+    def anglicize100to999(n):
+        if n // 100 == 1:
+            if n % 100 > 0:
+                return 'one hundred ' + anglicize0to99(n % 100)
+            else:
+                return 'one hundred'
+
 
 
 
@@ -143,6 +161,10 @@ def anglicize(n):
         number_string = anglicize20to99(n)
         return number_string
     
+    if n >= 100 and n < 1000:
+        number_string = anglicize100to999(n)
+        return number_string
+
 
 
 #dev test cases
@@ -155,5 +177,18 @@ print('n is: ', n)
 print(anglicize(n))
 
 n = random.randint(20,99)
+print('n is: ', n)
+print(anglicize(n))
+
+n = 100
+print('n is: ', n)
+print(anglicize(n))
+
+
+n = random.randint(100,199)
+print('n is: ', n)
+print(anglicize(n))
+
+n = random.randint(100,999)
 print('n is: ', n)
 print(anglicize(n))
