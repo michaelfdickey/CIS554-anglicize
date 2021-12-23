@@ -5,8 +5,9 @@ The primary function in this module is anglicize(). This is a great module to he
 
 Author: Michael Dickey
 Date: Dec 23, 2021
-
 """
+
+import random 
 
 def anglicize(n):
     """
@@ -50,6 +51,7 @@ def anglicize(n):
 
 
 #dev test cases
-n = 3
+n = random.randint(0,9)
+print('n is: ', n)
 print(anglicize(n))
 
