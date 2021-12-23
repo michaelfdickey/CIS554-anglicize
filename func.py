@@ -213,8 +213,12 @@ def anglicize(n):
         return number_string
 
     if n >= 1000 and n < 9999:
-        number_string = anglicize0to9(n // 1000) + ' thousand ' + anglicize0to999(n % 1000)
-        return number_string
+        number_string = anglicize0to9(n // 1000) + ' thousand '
+        if n % 1000 == 0:
+            return number_string
+        else:
+            number_string = number_string + anglicize0to999(n % 1000)
+            return number_string
 
 
 #dev test cases
@@ -251,6 +255,10 @@ print('n is: ', n)
 print(anglicize(n))
 
 n = 1000
+print('n is: ', n)
+print(anglicize(n))
+
+n = 6000
 print('n is: ', n)
 print(anglicize(n))
 
