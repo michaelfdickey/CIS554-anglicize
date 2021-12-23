@@ -124,17 +124,15 @@ def anglicize(n):
             else:
                 return 'ninety'
 
+
     def anglicize0to99(n):
-        if n < 20:
+        # groups the above two functions. 
+        if n < 10:
+            return anglicize0to9(n)
+        elif n >= 10 and n < 20:
             return anglicize10to19(n)
         else:
             return anglicize20to99(n)
-
-            
-
-
-
-
 
 
     def anglicize100to999(n):
@@ -143,6 +141,49 @@ def anglicize(n):
                 return 'one hundred ' + anglicize0to99(n % 100)
             else:
                 return 'one hundred'
+        if n // 100 == 2:
+            if n % 100 > 0:
+                return 'two hundred ' + anglicize0to99(n % 100)
+            else:
+                return 'two hundred'
+        if n // 100 == 3:
+            if n % 100 > 0:
+                return 'three hundred ' + anglicize0to99(n % 100)
+            else:
+                return 'three hundred'
+        if n // 100 == 4:
+            if n % 100 > 0:
+                return 'four hundred ' + anglicize0to99(n % 100)
+            else:
+                return 'four hundred'
+        if n // 100 == 5:
+            if n % 100 > 0:
+                return 'five hundred ' + anglicize0to99(n % 100)
+            else:
+                return 'five hundred'
+        if n // 100 == 6:
+            if n % 100 > 0:
+                return 'six hundred ' + anglicize0to99(n % 100)
+            else:
+                return 'six hundred'
+        if n // 100 == 7:
+            if n % 100 > 0:
+                return 'seven hundred ' + anglicize0to99(n % 100)
+            else:
+                return 'seven hundred'
+        if n // 100 == 8:
+            if n % 100 > 0:
+                return 'eight hundred ' + anglicize0to99(n % 100)
+            else:
+                return 'eight hundred'
+        if n // 100 == 9:
+            if n % 100 > 0:
+                return 'nine hundred ' + anglicize0to99(n % 100)
+            else:
+                return 'nine hundred'
+        
+
+        
 
 
 
@@ -184,6 +225,13 @@ n = 100
 print('n is: ', n)
 print(anglicize(n))
 
+n = 108
+print('n is: ', n)
+print(anglicize(n))
+
+n = 118
+print('n is: ', n)
+print(anglicize(n))
 
 n = random.randint(100,199)
 print('n is: ', n)
