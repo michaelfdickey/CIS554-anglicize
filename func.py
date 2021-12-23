@@ -74,8 +74,63 @@ def anglicize(n):
             return 'eighteen'
         if n == 19: 
             return 'nineteen'
+
+    def anglicize20to99(n):
+        if n // 10 == 2:
+            if n % 10 > 0:
+                return 'twenty ' + anglicize0to9(n % 10)
+            else:
+                return 'twenty'
+
+        if n // 10 == 3:
+            if n % 10 > 0:
+                return 'thirty ' + anglicize0to9(n % 10)
+            else:
+                return 'thirty'
         
-    
+        if n // 10 == 4:
+            if n % 10 > 0:
+                return 'forty ' + anglicize0to9(n % 10)
+            else:
+                return 'forty'
+        
+        if n // 10 == 5:
+            if n % 10 > 0:
+                return 'fifty ' + anglicize0to9(n % 10)
+            else:
+                return 'fifty'
+        
+        if n // 10 == 6:
+            if n % 10 > 0:
+                return 'sixty ' + anglicize0to9(n % 10)
+            else:
+                return 'sixty'
+        
+        if n // 10 == 7:
+            if n % 10 > 0:
+                return 'seventy ' + anglicize0to9(n % 10)
+            else:
+                return 'seventy'
+
+        if n // 10 == 8:
+            if n % 10 > 0:
+                return 'eighty ' + anglicize0to9(n % 10)
+            else:
+                return 'eighty'
+
+        if n // 10 == 9:
+            if n % 10 > 0:
+                return 'ninety ' + anglicize0to9(n % 10)
+            else:
+                return 'ninety'
+
+
+        
+
+
+
+
+    # call the appropriate sub function(s)
     if n < 10:
         number_string = anglicize0to9(n)
         return number_string
@@ -84,6 +139,10 @@ def anglicize(n):
         number_string = anglicize10to19(n)
         return number_string
 
+    if n >= 20 and n < 100:
+        number_string = anglicize20to99(n)
+        return number_string
+    
 
 
 #dev test cases
@@ -92,5 +151,9 @@ print('n is: ', n)
 print(anglicize(n))
 
 n = random.randint(10,19)
+print('n is: ', n)
+print(anglicize(n))
+
+n = random.randint(20,99)
 print('n is: ', n)
 print(anglicize(n))
