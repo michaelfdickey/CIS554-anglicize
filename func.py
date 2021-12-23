@@ -21,8 +21,17 @@ def anglicize(n):
     1001:   'one thousand and one'
     990899: 'nine hundred and ninety eight thousand nine hundred and ninety nine'
 
+    Paramter: the intereger to anglicize
+    Precondition: n is an integer in the range 0 <= n < 1,000,000
+
     """
-    if n < 10:
+
+    number_string = ''
+
+    def anglicize0to9(n):
+        """
+        returns the neglish equivalent of single digit integer 0-9
+        """
         if n == 0:
             return 'zero'
         if n == 1:
@@ -44,9 +53,9 @@ def anglicize(n):
         if n == 9:
             return 'nine'
 
-
-
-
+    if n < 10:
+        number_string = anglicize0to9(n)
+        return number_string
 
 
 
