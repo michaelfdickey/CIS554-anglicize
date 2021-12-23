@@ -8,6 +8,6 @@ Example:
 
 `111` returns 'one hundred eleven'
 
-`253180` returns 'two hundred fifty thousand one hundred and eighty'
+`253180` returns 'two hundred fifty thousand one hundred eighty'
 
 Part of eCornell's python certificate program, it was an example program used for explanatory purporses. Recreating just for fun. 
