@@ -53,8 +53,35 @@ def anglicize(n):
         if n == 9:
             return 'nine'
 
+    def anglicize10to19(n):
+        if n == 10:
+            return 'ten'
+        if n == 11:
+            return 'eleven'
+        if n == 12:
+            return 'twelve'
+        if n == 13:
+            return 'thirteen'
+        if n == 14:
+            return 'fourteen'
+        if n == 15:
+            return 'fifteen'
+        if n == 16:
+            return 'sixteen'
+        if n == 17:
+            return 'seventeen'
+        if n == 18:
+            return 'eighteen'
+        if n == 19: 
+            return 'nineteen'
+        
+    
     if n < 10:
         number_string = anglicize0to9(n)
+        return number_string
+
+    if n >= 10 and n < 20:
+        number_string = anglicize10to19(n)
         return number_string
 
 
@@ -64,3 +91,6 @@ n = random.randint(0,9)
 print('n is: ', n)
 print(anglicize(n))
 
+n = random.randint(10,19)
+print('n is: ', n)
+print(anglicize(n))
