@@ -182,6 +182,12 @@ def anglicize(n):
             else:
                 return 'nine hundred'
         
+    def anglicize0to999(n):
+        if n < 100:
+            return anglicize0to99(n)
+        else:
+            return anglicize100to999(n)
+
 
         
 
@@ -206,6 +212,9 @@ def anglicize(n):
         number_string = anglicize100to999(n)
         return number_string
 
+    if n >= 1000 and n < 9999:
+        number_string = anglicize0to9(n // 1000) + ' thousand ' + anglicize0to999(n % 1000)
+        return number_string
 
 
 #dev test cases
@@ -240,3 +249,12 @@ print(anglicize(n))
 n = random.randint(100,999)
 print('n is: ', n)
 print(anglicize(n))
+
+n = 1000
+print('n is: ', n)
+print(anglicize(n))
+
+n = random.randint(1000,9999)
+print('n is: ', n)
+print(anglicize(n))
+
